@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace Vocabulary
 {
@@ -11,12 +12,21 @@ namespace Vocabulary
     {
         public static void CommandAnalyze(DictionaryDB d, string com)
         {
-            if (com == "learn")
-                Learning(d);
+            if (Regex.IsMatch(com, @"^learn\s+\d+"))
+                Learning(d, int.Parse(Regex.Match(com, @"^learn\s+(\d+)").Groups[1].Value));
             else if (com == "help")
             {
                 Console.Clear();
-                Console.WriteLine("HELP:\nadd\t\tдобавить слова\nremove ...\tудалить слово\nedit\t\tизменить слово\nq / exit\tвыход\n");
+                try
+                {
+                    string[] help = File.ReadAllLines("help.txt", Encoding.UTF8);
+                    foreach (string x in help)
+                        Console.WriteLine(x);
+                }
+                catch(FileNotFoundException)
+                {
+                    Console.WriteLine("Файл help.txt не найден");
+                }
             }
             else if (com == "add")
                 Add(d);
@@ -48,35 +58,58 @@ namespace Vocabulary
                 else break;
             }
         }
-
-        private static void Learning(DictionaryDB d)
+        /// <summary>
+        /// Функция повторения слов
+        /// </summary>
+        /// <param name="d">Словарь слов</param>
+        /// <param name="countWords">Кол-во слов для повторения</param>
+        private static void Learning(DictionaryDB d, int countWords)
         {
-            var r = new Random();
-            int[] index = Enumerable.Range(1, d.Count).ToArray();
-            var i = 0;
-
-            while (index.Length != 0)
+            try
             {
-                var num = r.Next(0, index.Length);
-                i++;
+                if (countWords <= 0 || countWords > d.Count)
+                    throw new ArgumentException("Недопустимое кол-во слов для повторения");
 
-                var rusToEng = r.Next(0, 2);
+                Console.WriteLine($"Повторение {countWords}:\n");
+                var r = new Random();
+                int[] index = Enumerable.Range(1, d.Count).ToArray();
+                var i = 0;
+                int num = 0;
+                int rusToEng = 0;
 
-                Console.Write(i + "\t");
-                Console.Write(rusToEng == 1? d[index[num]].Rus : d[index[num]].Eng);
-                Console.CursorLeft = 40;
-                char answer = Console.ReadKey().KeyChar;
-                if (answer == 'q')
-                    break;
-                if (answer == ' ')
-                    d[index[num]].MarkInc();
-                Console.CursorLeft = 39;
-                Console.Write(" - ");
-                Console.WriteLine(rusToEng == 1 ? d[index[num]].Eng : d[index[num]].Rus);
+                while (i < countWords)
+                {
+                    // выбираем одно из трех слов с наименьшей оценкой
+                    int n1 = r.Next(0, index.Length);
+                    int n2 = r.Next(0, index.Length);
+                    int n3 = r.Next(0, index.Length);
+                    num = d[index[n1]].Mark <= d[index[n2]].Mark ? n1 : n2;
+                    num = d[index[num]].Mark <= d[index[n3]].Mark ? num : n3;
 
-                index = index.Where(x => x != index[num]).ToArray();
+                    i++;
+
+                    rusToEng = r.Next(0, 2);
+
+                    Console.Write(i + "\t" + (rusToEng == 1 ? d[index[num]].Rus : d[index[num]].Eng));
+                    Console.CursorLeft = 40;
+                    char answer = Console.ReadKey().KeyChar;
+                    if (answer == 'q')
+                        break;
+                    if (answer == ' ')
+                        d[index[num]].MarkInc();
+                    else
+                        d[index[num]].MarkDec();
+                    Console.CursorLeft = 39;
+                    Console.WriteLine(" - " + (rusToEng == 1 ? d[index[num]].Eng : d[index[num]].Rus) + "  " + d[index[num]].Mark);
+
+                    index = index.Where(x => x != index[num]).ToArray();
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
+            catch(ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }

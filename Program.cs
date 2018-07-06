@@ -14,6 +14,7 @@ namespace Vocabulary
         {
             var dict = new DictionaryDB("dictionary.txt");
             string com = "";
+            Console.Write("help - помощь\n\n");
             while (true)
             {
                 Console.Write("command >> ");

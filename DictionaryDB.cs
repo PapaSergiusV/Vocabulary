@@ -8,18 +8,28 @@ using System.Text.RegularExpressions;
 
 namespace Vocabulary
 {
-    class DictionaryDB
+    class DictionaryDB : Dictionary<int, Word>
     {
         private Dictionary<int, Word> _words;
         private int _count;
+        private int[] _markCount;
+        /// Делегат вывода
         private delegate void _OutputDel(string message);
+        /// Делегат считывания строки
         private delegate string _ReadStrDel();
+        /// Делегат Да / Нет
         private delegate bool _ReadYesNoDel();
+        /// События к делегатам
         private event _OutputDel Write;
         private event _ReadStrDel ReadLine;
         private event _ReadYesNoDel ReadYesNo;
 
-        public Word this[int num]
+        /// <summary>
+        /// Возвращает слово по его номеру в словаре
+        /// </summary>
+        /// <param name="num">Номер</param>
+        /// <returns>Ссылка на объект Word</returns>
+        public new Word this[int num]
         {
             get
             {
@@ -28,16 +38,22 @@ namespace Vocabulary
                 return null;
             }
         }
-        public int Count
-        {
-            get { return this._count; }
-        }
-
+        /// Кол-во слов в словаре
+        public new int Count => this._count;
+        
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="path">Ссылка на файл словарь.txt</param>
         public DictionaryDB(string path)
         {
             Write += IOWindow.Print;
             ReadYesNo += IOWindow.ReadYesNo;
+            ReadLine += IOWindow.ReadString;
+
+            this._markCount = new int[6];
             this._words = new Dictionary<int, Word>();
+
             if (File.Exists(path))
             {
                 string[] line = File.ReadAllLines(path, Encoding.UTF8);
@@ -46,7 +62,9 @@ namespace Vocabulary
                     if (Regex.IsMatch(line[i], @"^\w+.+\s\|\s\w"))
                     {
                         var m = Regex.Match(line[i], @"^(\w+.+)\s\|\s(.+)\s\|\s(\d+)$");
-                        this._Load(m.Groups[2].Value, m.Groups[1].Value, int.Parse(m.Groups[3].Value));
+                        int mark = int.Parse(m.Groups[3].Value);
+                        this._Load(m.Groups[2].Value, m.Groups[1].Value, mark);
+                        this._markCount[mark]++;
                     }
                     else
                         Write($"Line {i + 1} is not match pattern\n");
@@ -56,6 +74,12 @@ namespace Vocabulary
                 Write($"! File not found ({path})\n");
         }
 
+        /// <summary>
+        /// Загрузка считываемых слов в словарь класса. Используется для конструктора
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
+        /// <param name="rus">Русское слово</param>
+        /// <param name="mark">Оценка</param>
         private void _Load(string eng, string rus, int mark)
         {
             this._count++;
@@ -63,6 +87,12 @@ namespace Vocabulary
             this._words.Add(this._count, new Word(eng, rus, mark));
         }
 
+        /// <summary>
+        /// Добавление слова в словарь класса
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
+        /// <param name="rus">Русское слово</param>
+        /// <param name="mark">Оценка</param>
         public void Add(string eng, string rus, int mark = 0)
         {
             try
@@ -81,7 +111,10 @@ namespace Vocabulary
                 Write(e.Message + "\n");
             }
         }
-
+        /// <summary>
+        /// Редактирование слова из словаря
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
         public void Edit(string eng)
         {
             KeyValuePair<int, Word> toEdit = this._Search(eng);
@@ -108,6 +141,10 @@ namespace Vocabulary
             }
         }
 
+        /// <summary>
+        /// Удаление слова из словаря
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
         public void Remove(string eng)
         {
             KeyValuePair<int, Word> toDel = this._Search(eng);
@@ -115,7 +152,11 @@ namespace Vocabulary
             if (toDel.Key != -1)
                 this._words.Remove(toDel.Key);
         }
-
+        /// <summary>
+        /// Поиск слова в словаре
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
+        /// <returns>KeyValuePair из словаря либо -1 и null</returns>
         private KeyValuePair<int, Word> _Search(string eng)
         {
             try
@@ -132,6 +173,12 @@ namespace Vocabulary
             }
         }
 
+        /// <summary>
+        /// Функция для форматирования слова
+        /// </summary>
+        /// <param name="rus">Русское слово</param>
+        /// <param name="eng">Английское слово</param>
+        /// <returns>Отформатированное слово</returns>
         private (string, string) _WordFormat(string rus, string eng)
         {
             rus = rus.Trim(' ', ',', '.', ':', ';', '/');
@@ -139,6 +186,10 @@ namespace Vocabulary
             return (char.ToUpper(rus[0]) + rus.Substring(1).ToLower(), eng.ToLower());
         }
 
+        /// <summary>
+        /// Сохранение словаря в файл
+        /// </summary>
+        /// <param name="path">Путь к файлу</param>
         public void Save(string path)
         {
             using (var sw = new StreamWriter(path, false, Encoding.UTF8))
@@ -148,10 +199,22 @@ namespace Vocabulary
             }
         }
 
-        public void Print()
+        /// <summary>
+        /// Возвращает кол-во слов с оценкой
+        /// </summary>
+        /// <param name="num">Оценка</param>
+        /// <returns>Кол-во слов</returns>
+        public int MarkCount(int num)
         {
-            foreach (KeyValuePair<int, Word> word in this._words)
-                Write($"{word.Key}\t{word.Value.Rus} - {word.Value.Eng}\n");
+            try
+            {
+                return this._markCount[num];
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                Write($"Оценки {num} не существует!\n{e.StackTrace}\n");
+                return 0;
+            }
         }
     }
 }

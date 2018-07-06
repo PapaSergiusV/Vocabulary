@@ -11,33 +11,25 @@ namespace Vocabulary
         private string _rus;
         private string _eng;
         private int _mark;
-        private delegate void _InputDelegate(string message);
-        private event _InputDelegate Print;
+        /// Делегат вывода
+        private delegate void _OutputDelegate(string message);
+        private event _OutputDelegate Print;
 
-        public string Rus
-        {
-            get { return this._rus; }
-        }
-        public string Eng
-        {
-            get { return this._eng; }
-        }
-        public int Mark
-        {
-            get { return this._mark; }
-        }
+        /// Возвращает русское слово
+        public string Rus => this._rus;
 
-        public void MarkInc()
-        {
-            this._mark++;
-        }
+        /// Возвращает английское слово
+        public string Eng => this._eng; 
 
-        public void MarkDec()
-        {
-            if (this._mark > 0)
-                this._mark--;
-        }
+        /// Возвращает оценку
+        public int Mark => this._mark;
 
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        /// <param name="eng">Английское слово</param>
+        /// <param name="rus">Русское слово</param>
+        /// <param name="mark">Оценка</param>
         public Word(string eng, string rus, int mark)
         {
             Print += IOWindow.Print;
@@ -52,11 +44,25 @@ namespace Vocabulary
                 else
                     throw new ArgumentException();
             }
-            catch(ArgumentException e)
+            catch (ArgumentException e)
             {
                 Print("В конструктор класса Word переданы неверные параметры\n");
                 Print(e.StackTrace + "\n");
             }
+        }
+
+        /// Повышение оценки
+        public void MarkInc()
+        {
+            if (this._mark < 5)
+                this._mark++;
+        }
+
+        /// Понижение оценки
+        public void MarkDec()
+        {
+            if (this._mark > 0)
+                this._mark--;
         }
     }
 }
