@@ -12,8 +12,10 @@ namespace Vocabulary
     {
         static void Main(string[] args)
         {
+            Console.Title = "Vocabulary trainer";
             var dict = new DictionaryDB("dictionary.txt");
             string com = "";
+            DictionaryMng.d = dict;
             Console.Write("help - помощь\n\n");
             while (true)
             {
@@ -21,7 +23,7 @@ namespace Vocabulary
                 com = Console.ReadLine();
                 if (com == "q" || com == "exit" || com == "quit")
                     break;
-                DictionaryMng.CommandAnalyze(dict, com);
+                DictionaryMng.CommandAnalyze(com);
             }
 
             dict.Save("dictionary.txt");

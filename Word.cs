@@ -3,13 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 
 namespace Vocabulary
 {
+    [DataContract]
     class Word
     {
+        [DataMember]
         private string _rus;
+        [DataMember]
         private string _eng;
+        [DataMember]
         private int _mark;
         /// Делегат вывода
         private delegate void _OutputDelegate(string message);

@@ -5,13 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Json;
+using System.Runtime.Serialization;
 
 namespace Vocabulary
 {
-    class DictionaryDB : Dictionary<int, Word>
+    [DataContract]
+    class DictionaryDB// : Dictionary<int, Word>
     {
+        [DataMember]
         private Dictionary<int, Word> _words;
+        [DataMember]
         private int _count;
+        [DataMember]
         private int[] _markCount;
         /// Делегат вывода
         private delegate void _OutputDel(string message);
@@ -29,7 +35,7 @@ namespace Vocabulary
         /// </summary>
         /// <param name="num">Номер</param>
         /// <returns>Ссылка на объект Word</returns>
-        public new Word this[int num]
+        public Word this[int num]
         {
             get
             {
@@ -39,7 +45,7 @@ namespace Vocabulary
             }
         }
         /// Кол-во слов в словаре
-        public new int Count => this._count;
+        public int Count => this._count;
         
         /// <summary>
         /// Конструктор
@@ -150,7 +156,8 @@ namespace Vocabulary
             KeyValuePair<int, Word> toDel = this._Search(eng);
 
             if (toDel.Key != -1)
-                this._words.Remove(toDel.Key);
+                if (this._words.Remove(toDel.Key))
+                    Write($"Слово {eng} удалено\n");
         }
         /// <summary>
         /// Поиск слова в словаре

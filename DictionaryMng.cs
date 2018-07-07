@@ -5,41 +5,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace Vocabulary
 {
     class DictionaryMng
     {
-        public static void CommandAnalyze(DictionaryDB d, string com)
+        public static DictionaryDB d;
+        public static void CommandAnalyze(string com)
         {
-            if (Regex.IsMatch(com, @"^learn\s+\d+"))
-                Learning(d, int.Parse(Regex.Match(com, @"^learn\s+(\d+)").Groups[1].Value));
-            else if (com == "help")
+            try
             {
-                Console.Clear();
-                try
+                if (d == null)
+                    throw new NullReferenceException("Ссылка на словарь не передана в DictionaryMng");
+                if (Regex.IsMatch(com, @"^learn\s+\d+"))
+                    Learning(int.Parse(Regex.Match(com, @"^learn\s+(\d+)").Groups[1].Value));
+                else if (com == "to json")
+                    WriteToJson();
+                else if (com == "help")
                 {
-                    string[] help = File.ReadAllLines("help.txt", Encoding.UTF8);
-                    foreach (string x in help)
-                        Console.WriteLine(x);
+                    Console.Clear();
+                    try
+                    {
+                        string[] help = File.ReadAllLines("help.txt", Encoding.UTF8);
+                        foreach (string x in help)
+                            Console.WriteLine(x);
+                    }
+                    catch (FileNotFoundException)
+                    {
+                        Console.WriteLine("Файл help.txt не найден");
+                    }
                 }
-                catch(FileNotFoundException)
+                else if (com == "add")
+                    Add();
+                else if (Regex.IsMatch(com, @"^remove\s+\w+"))
+                    d.Remove(Regex.Match(com, @"^remove\s+(.+)$").Groups[1].Value);
+                else if (Regex.IsMatch(com, @"^edit\s+\w+"))
                 {
-                    Console.WriteLine("Файл help.txt не найден");
+                    Console.Clear();
+                    d.Edit(Regex.Match(com, @"^edit\s+(.+)$").Groups[1].Value);
                 }
             }
-            else if (com == "add")
-                Add(d);
-            else if (Regex.IsMatch(com, @"^remove\s+\w+"))
-                d.Remove(Regex.Match(com, @"^remove\s+(.+)$").Groups[1].Value);
-            else if (Regex.IsMatch(com, @"^edit\s+\w+"))
+            catch(NullReferenceException e)
             {
-                Console.Clear();
-                d.Edit(Regex.Match(com, @"^edit\s+(.+)$").Groups[1].Value);
+                Console.WriteLine(e.Message);
             }
         }
 
-        private static void Add(DictionaryDB d)
+        private static void Add()
         {
             Console.Clear();
             Console.WriteLine("Введите 'q' для выхода\n----------------------");
@@ -63,7 +77,7 @@ namespace Vocabulary
         /// </summary>
         /// <param name="d">Словарь слов</param>
         /// <param name="countWords">Кол-во слов для повторения</param>
-        private static void Learning(DictionaryDB d, int countWords)
+        private static void Learning(int countWords)
         {
             try
             {
@@ -109,6 +123,15 @@ namespace Vocabulary
             catch(ArgumentException e)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        private static void WriteToJson()
+        {
+            DataContractJsonSerializer form = new DataContractJsonSerializer(typeof(DictionaryDB));
+            using (FileStream fs = new FileStream("dictionary.json", FileMode.OpenOrCreate))
+            {
+                form.WriteObject(fs, d);
             }
         }
     }
