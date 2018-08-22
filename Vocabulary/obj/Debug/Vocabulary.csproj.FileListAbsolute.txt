@@ -1,0 +1,7 @@
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\bin\Debug\Vocabulary.exe.config
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\bin\Debug\Vocabulary.exe
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\bin\Debug\Vocabulary.pdb
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\obj\Debug\Vocabulary.csprojResolveAssemblyReference.cache
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\obj\Debug\Vocabulary.csproj.CoreCompileInputs.cache
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\obj\Debug\Vocabulary.exe
+C:\Users\Сергей\Documents\Программирование\C#\Vocabulary\Vocabulary\obj\Debug\Vocabulary.pdb

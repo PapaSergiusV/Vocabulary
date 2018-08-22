@@ -1,0 +1,484 @@
+﻿Взволнованный | excited about / at
+Волнение | excitment
+Благодарный | grateful
+Довольный чем-то | pleased with
+Гордость | pride
+Гордый | proud of
+Грусть | sadness
+Кормить | feed
+Включать | turn on
+Держать, хранить | keep
+Стипендия | grant
+Выбор | choice
+Зависеть от | depend on
+Подавать заявку на | apply for
+Еда | meal
+Принадлежать | belong to
+Привлекательный | attractive
+Цвет лица | complexion
+Стройный | slim
+Морщина | wrinkle
+Молодость | youth
+Полотенце | towel
+Уверять | assure
+Продвижение, поощрение | promotion
+Улов, поймать | catch
+Подниматься / опускаться | go up / go down
+Уйти | go back
+Войти / выйти | go in / out
+Поднять / опустить | take up / down
+Отобрать | take away
+Внести / вынести | take in / out
+Посмотреть вверх / вниз | look up / down
+Оглянуться | look back
+Отвернуться | look away
+Возвращаться | come back
+Уходить | come away
+Выходить | come out
+Гнев | anger
+Стыд | shame
+Завистливый | envious
+Ревнивый | jealous
+Беспокоить, беспокойство | bother
+Милый | cute
+Сразу, немедленно | instantly
+Сдержанный | discreet
+Обвинять | blame
+Пыльный | dusty
+Необходимый | essential
+Конечно | definitely
+Предпочитать | prefer
+Даже | even
+Окружать | surround
+Удар, бить | hit
+Причина | cause
+Получать | get
+Ставка, спорить | bet
+Провод | wire
+Гвоздь, прибивать | nail
+Ужасный | awful
+Миска, чаша | bowl
+Предполагать | suppose
+Доказательства, данные | evidence
+Веселый | hilarious
+Восхитительный | delightful
+Наверно, вероятно | probably
+Приятель | buddy
+Ценить, стоимость | value
+Заботиться, уход | care
+Карлик, миниатюрный | midget
+Урод, странный | freak
+Желать знать, дивиться | wonder
+Крик, кричать | scream
+Хулиган | bully
+Как-бы, вроде | sort of
+Помимо, кроме того | besides
+Целый, весь | whole
+Настроение | mood
+Ранить | hurt
+Точно, очевидно | obviusly
+Ценить (я признателен) | appreciate
+Способный | capable of
+Почти | almost
+Нести | carry
+Позволять | allow
+Доклад | report
+Немного | bit
+Позвонить | make a call
+Ответить на звонок | receive a call
+Набрать номер | dial a number
+Монета | coin
+Обменивать | exchange
+Плата | fee
+Квитанция | receipt
+Запрос | request
+Забрать | withdraw
+Принимать | accept
+Диапазон | range
+Прибытие | arrival
+Свободный номер | vacancy
+Регистрация | check in
+Отвечать | reply
+Пешеходный переход | crosswalk
+Шоссе | highway
+Пешеход | pedestrian
+Автострада | freeway
+Знак | sign
+Ложить | put
+Свой | own
+Дело, случай | case
+Казаться | seem
+Тот же | same
+Однако | however
+Обеспечить | provide
+Внутри | within
+Хотя, несмотря на | although
+Лучше, точнее, охотнее | rather
+Вполне, совсем | quite
+Ли | whether
+Вести за собой | lead
+Наименьший | least
+Возможно | perhaps
+Сухо | dry
+Влажно | humid
+Болтать | chat
+Всегда | ever / always
+Туманно | foggy
+Прохладно | chilly
+Давить, толпа | crowded (with)
+Стрижка | haircut
+Родные братья и сестры | siblings
+Родственник | relative
+Указание | direction
+Светофор | stoplight
+Перекресток | intersection
+Продуктовый | grocery store
+Рядом с | next to
+Напротив | across from
+Перед | in front of
+За углом | around the corner
+Посередине | in the middle
+В конце | at the end
+Маленькая, изящная | petite
+Худой | thin (pc) / skinny
+Обычный (телосложение) | average
+Большой | large (pc) / fat
+Тяжелый | heavy (pc) / chubby
+Прямой | straight
+Волнистые | wavy
+Кудрявые | curly
+Курчавые | kinky
+Лысый | bold
+Светло-карие | hazel
+Борода | beard
+Веснушки | freckles
+Усы | mustache
+Очки | glasses
+Рост | height
+Форма, фигура | shape
+Пожилой | elderly person
+Волосы | hair
+Ухо | ear
+Брать в долг | borrow
+Оба | both
+Сводка, краткий | brief
+Передача | broadcast
+Каждый | each
+Масло | butter / oil
+Безусловно | absolutely
+Представлять (что-то) | introduce
+Далеко | far away
+Однажды, раз | once
+Вдруг | suddenly
+Уютный | cozy
+Пар | steam
+Уродливая масса | gross
+Расписание, планировать | schedule
+Пердеть | fart
+Потрясающий | terrific
+Дозволение | allowance
+Вдали, в стороне | aloof
+Также | also
+Кол-во, сумма | amount
+Объявлять | announce
+Появляться | appear
+Применять | apply
+Одобрять | approve
+Предмет | article
+Болеть | be ill
+Фасоль | bean
+Говядина | beef
+Вести себя | behave
+Поведение | behaviour
+Позади | behind
+Осторожно | beware
+Вне | beyond
+Счет | bill / account
+Кипяченый, вареный | boiled
+Скука | bore
+Качество | quality
+Голодный | hungry
+Полный | full of
+Ранний | early
+Поздний | late
+Высокий | tall
+Дорогой | expensive
+Дешевый | cheap
+Внимательный | careful
+Текущий, современный | actual
+Регулировать, приспосабливать | adjust
+Восхищаться | admire
+Реклама | advertisment
+Взрослый | adult
+Советовать | advise
+Позволить себе | afford
+Согласие, соглашение | agreement
+Вперед | ahead
+Вспомогательные средства | aids
+Расческа, расчесывать | comb
+Шнур, связывать | cord
+Веревка | rope
+Муж | husband
+Уже | already
+Еще | still / yet
+Такой | such
+Ветер | wind
+Перекресток | crossing
+Будить | wake
+Мыть | wash
+Приносить | bring
+Квартира | apartment
+Падать | fall
+Слушать | hear
+Рисовать | draw
+Варить | cook
+Красивый | handsome
+Печальный | sad
+Радостный | glad
+Угол | angle
+Тормоз, тормозить | brake
+Ветвь, отделение | brunch
+Щетка, кисть | brush
+Ягода | berry
+Черпать, ведро | bucket
+Вести | cart
+Вагон | carriage
+Пальто, покрывать | coat
+Цепь, сковывать | chain
+Доверие, доверять | trust
+Через, посредством, хотя | through
+Неправильный | wrong
+Должен | gotta / have to / must
+Тишина, молчание | silence
+Лезвие | blade
+Ботинок, загружать | boot
+Круг | circle
+Грудь | chest
+Подбородок | chin
+Шрам | scar
+Особенность | feature
+Коренастный | stocky
+Хилый | frail
+Полный (человек) | plump
+Загорелый | suntanned
+Бледный | pale
+Круглый | round
+Оборудовать | equip
+Участвовать, разделять | participate
+Сосредоточенный | keen on
+Хищник | predator
+Заканчиваться | run out
+Удобный, подходящий | convenient
+Предотвращать | prevent
+Приостанавливать | suspend
+Речь | speech
+Справка, рекомендация, ссылка | reference
+Разрешение | permission
+Уверенный | confident
+Второе блюдо | main course
+Груз, грузовой | cargo
+Причал | moorage
+Судно | vessel
+Конкуренция, соревнование | competition
+Сила | strength
+Представление | performance
+Обожать | adore
+Риск, рисковать, играть на деньги | gamble
+Редко | seldom
+Широко распространенный | widespread
+Оборудование | equipment
+Ладить | get along / get on well
+Маршрут | route
+Кошелек | wallet
+Зарплата | salary
+Гость | guest
+Расстроиться, расстроенный | upset (about)
+Любопытный | curious
+Пила | saw
+До тех пор пока | until
+Значить | mean
+Почерк | handwriting
+Близко | close
+Проход, пропуск | pass
+Фонарь | flashlight
+Теснота | tightness
+Потеть | perspire
+По направлению к | towards
+Вытирать | wipe
+Предмет, пункт | item
+Раковина | sink
+Достигать | reach
+Через (лес - для примера) | across
+Много, участок | lot
+Или | either
+Сдача | change
+Шкаф, кабинет | cabinet
+Срочно | urgently
+Угадывать | guess
+Взрыв | explosion
+Тянуть, пододвигать | pull
+Очередь | line
+Умирать с голоду | starve
+Спор, ссора | argument
+Рюкзак | backpack
+Преодолеть | get over
+Посмотреть на | look at
+Понимать | get it
+Убежать, выйти сухим из воды | get away
+Отказаться | turn down
+Ухаживать, присматривать | look after
+Переделывать в | turn into
+Быть настороже | look out
+Увеличивать / уменьшать | turn up / down
+Осматриваться | look around
+Избавиться от | get rid of
+Просматривать | look through
+Свернуть (с дороги) | turn off
+Оказаться | turn out
+Испугался | frightened of
+Обратиться к | turn to
+Отказываться | refuse
+Полагаться | rely on
+Не пропускать | turn away
+Подсчитывать | count
+Вообще | at all
+Прикреплять | attach
+Пялиться на | stare at
+Награда | reward
+Покупка, покупать | purchase
+Роскошный | luxurious
+Обещание, обещать | promise
+Разделяться, расставаться | split up
+Изумленный чем-то | amazed at / by
+Раздражен чем-то / кем-то | annoyed about / with
+Удивленный чем-то | surprised at / by
+Удивленный чем-то | astonished at / by
+Осведомленный в | aware of
+Неспособный к | bad at
+Скучающий от | bored with
+Прекрасно знать / делать | be brilliant at
+Небрежный, неосторожный | careless about
+Убежденный в | sure at / about
+Убежденный в | certain of / about
+Жестокий | cruel to
+Обрадованный | delighted with
+Разочарованный | disappointed with
+Превосходный в | excellent at
+Взбешенный чем-то / кем-то | furious about / with
+Отчаявшийся в чем-то | hopeless at
+Независящий от | independent of
+Сделанный из | made of
+Взволнованный чем-то | nervous about
+Ответственный за | responsible for
+Удовлетворенный чем-то | satisfied with
+Потрясенный чем-то | shocked at / by
+Испытывающий недостаток чего-то | short of
+Испуганный чем-то | terrified of
+Уставший от | tired of
+Терпимый к | tolerant of
+Обеспокоенный чем-то | worried about
+Прикладывать к | enclose with
+Держать | hold
+Производить | produce
+Запускать | launch
+Получать | receive
+Изобретать | invent
+Проектировать | design
+Составлять | compose
+Публиковать | publish
+Несчастный случай | accident
+Посылка | parcel
+Лист | sheet
+Духи | fragrance
+Изнуренный чем-то | exhausted by
+Терпение | patience
+Подросток | adolescent
+Расти | grow up
+Годовалый ребенок | toddler
+Знакомство | acquaintance
+Усыновленный | adopted
+Пара | couple
+Разведенный | divorced
+Жених / невеста | fiance / fiancee
+Приемный | foster
+Сводный брат | half brother
+Супруг | spouse
+Тройня | triplets
+Беременная | pregnant
+Быть образцом подражания | be a role model / set an example
+Разойтись | break up
+Конфликт поколений | generation gap
+Развестись | get divorced
+Обручиться | get engaged
+Происхождение | origin
+Выслеживать | trace back
+Воспитывать | bring up
+Чистить зубы | brush teeth
+Убирать | clear up
+Ездить на работу | commute
+Работать по дому | do housework
+Готовить | do the cooking / prepare meal / make meals
+Гладить | do the ironing
+Мыть посуду | do the washing-up
+Одеваться | get dressed
+Обедать | have a lunch
+Прилечь | lie down
+Лежать в постели | lie in
+Дневной сон | nap
+Надевать | put on
+Бриться | have a shave
+Заснуть | fall asleep
+Вставать | get up
+Бытовой | domestic
+Напрасно тратить | waste
+Гражданство | citizenship
+Занятие, род занятий | occupation
+Семейное положение | marital status
+Вовремя | on time
+Ждать с нетерпением | look forward to
+Заболеть | fall ill
+Иметь дело с | deal with
+Поэтому | and so
+В общем | all in all
+Хотя | though
+Строить, структурировать | structure
+Смешивать, путать | mix
+Честно, добросовестно | honestly
+Заинтересоваться | get interested in
+Сосредоточиться | focus on
+Даже себе | even to myself
+Беглый (о рассказчике) | fluent
+Слов. запас | vocabulary
+Приклеить | stick
+Пройти мимо | pass by
+Дополнительный | extra
+Образ жизни | way of life
+Перемотать | rewind
+Делать что-то с удовольствием | enjoy doing something
+Считать полезным | find it useful
+Примечание, записка | note
+Выражение | expression
+До сих пор | so far
+Родной язык | mother tongue
+Иностранный язык | foreign language
+Полный | complete
+Диаграмма, чертеж | chart
+В основном | mainly
+Учеб. заведение для взрослых | adult institution
+Рассматривать | consider
+Контролировать | check up on
+Различные | various
+Изменяться | vary
+Разнообразие | variety
+Предлагать что-то | offer
+Промежуток | gap
+Это имеет смысл | it make sense
+Проще говоря | put it simply
+Короче говоря | long story short
+Уточнить, рассказать подробнее | elaborate
+Частная жизнь | privacy
+Перехватывать | intercept
+Шантажировать | blackmail
+Производительность | performance needs
+Определенный, конкретный | particular
+Реализовывать, воплощать | implement
